@@ -75,25 +75,6 @@ view: tracking {
     sql: ${TABLE}.DeliveryDate ;;
   }
 
-  dimension_group: exp_delivery {
-    type: time
-    timeframes: [
-      raw,
-      time,
-      date,
-      week,
-      month,
-      quarter,
-      year
-    ]
-    sql: ${TABLE}.ExpDeliveryDate ;;
-  }
-
-  dimension: exp_delivery_time {
-    type: string
-    sql: ${TABLE}.ExpDeliveryTime ;;
-  }
-
   dimension: number_of_boxes {
     type: number
     sql: ${TABLE}.NumberOfBoxes ;;

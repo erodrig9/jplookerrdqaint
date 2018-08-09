@@ -10047,12 +10047,6 @@ explore: order_exceptions {
 }
 
 explore: order_header {
-  join: order_header {
-    type: left_outer
-    sql_on: ${order_header.order_header_id} = ${order_header.autoship_order_header_id} ;;
-    relationship: many_to_one
-  }
-
   join: members {
     type: left_outer
     sql_on: ${order_header.member_id} = ${members.member_id} ;;
@@ -10401,12 +10395,6 @@ explore: order_invoice {
 }
 
 explore: order_line {
-  join: order_line {
-    type: left_outer
-    sql_on: ${order_line.order_line_id} = ${order_line.original_order_line_id} ;;
-    relationship: many_to_one
-  }
-
   join: order_header {
     type: left_outer
     sql_on: ${order_line.order_header_id} = ${order_header.autoship_order_header_id} ;;
@@ -14413,12 +14401,6 @@ explore: provider_transit_zones {
 }
 
 explore: providers {
-  join: providers {
-    type: left_outer
-    sql_on: ${providers.provider_id} = ${providers.backup_provider_id} ;;
-    relationship: many_to_one
-  }
-
   join: dynamic_record {
     type: left_outer
     sql_on: ${providers.dynamic_record_id} = ${dynamic_record.dynamic_record_id} ;;
@@ -17227,11 +17209,6 @@ explore: tracking_history {
 }
 
 explore: uom {
-  join: uom {
-    type: left_outer
-    sql_on: ${uom.uomid} = ${uom.base_uomid} ;;
-    relationship: many_to_one
-  }
 }
 
 explore: uom_locale {
